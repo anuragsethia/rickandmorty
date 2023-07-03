@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.rick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("https://rickandmorty.fandom.com/wiki/File:Rick_Sanchez_(S4).png");
+}
+
+.morty {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("https://rickandmorty.fandom.com/wiki/File:Morty_Smith_(S4).png");
+}
