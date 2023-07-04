@@ -117,7 +117,7 @@ export const DisplayCard = ({ character, location, episodes }) => {
             <li className="list-group-item">
               <h5>
                 {character.name || 'UNKNOWN'}
-                <p>
+                <p className='my-2'>
                   {character.status === 'Alive' && (
                     <span className="badge bg-success">Alive</span>
                   )}
