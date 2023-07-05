@@ -10,12 +10,14 @@ function App() {
   const [episodes, setEpisodes] = useState({});
   const [isInitialRender, setIsInitialRender] = useState(true);
 
+  // Fetching details of 20 characters at once using the page no.
   const getAllCharacters = async () => {
     const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
     const data = await res.json();
     setCharacters((prev) => [...prev, ...data.results]);
   }
 
+  //Fetching all the locations at once 
   const getAllLocation = async () => {
     let allLocations = [];
     let nextPage = 1;
@@ -36,6 +38,7 @@ function App() {
     setLocations((prev) => ({ ...prev, ...locationMap }));
   };
 
+  //Fetching all the episodes at once
   const getAllEpisode = async () => {
     let allEpisodes = [];
     let nextPage = 1;
@@ -56,6 +59,7 @@ function App() {
     setEpisodes(episodeMap);
   };
 
+  // Updating the page count once scroller hit the bottom/ reached at the end of page.
   const handleInfiniteScroll = async () => {
     if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
       setPage((prev) => (prev + 1));
@@ -71,14 +75,17 @@ function App() {
   }, [isInitialRender, page]);
 
   useEffect(() => {
+    getAllEpisode();
+    getAllLocation();
+  }, []);
+
+  // For infinite scrolling
+  useEffect(() => {
     window.addEventListener("scroll", handleInfiniteScroll);
     return () => window.removeEventListener("scroll", handleInfiniteScroll);
   }, []);
 
-  useEffect(() => {
-    getAllEpisode();
-    getAllLocation();
-  }, []);
+  
 
   return (
     <>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import _get from 'lodash/get';
 import Modal from 'react-modal';
 
+// Displaying Location info
 const LocationInfoModal = ({ character, location }) => {
   const [showLocationInfo, setShowLocationInfo] = useState(false);
 
@@ -46,6 +47,7 @@ const LocationInfoModal = ({ character, location }) => {
   );
 };
 
+// Displaying all the episodes a character appeared in, including their air_date.
 const EpisodesModal = ({ character, episodes }) => {
   const [showEpisodes, setShowEpisodes] = useState(false);
 

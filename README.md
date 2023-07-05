@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started with Rick and Morty Profiles
+This project list all the characters of Rick and Morty.
 
 ## Available Scripts
 
